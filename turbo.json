@@ -10,6 +10,14 @@
       "outputs": ["bp_modules/**", ".botpress/**"],
       "dependsOn": ["generate", "^build"]
     },
+    "llmz#generate": {
+      "outputs": ["src/gen/**"],
+      "dependsOn": ["^generate", "^build"]
+    },
+    "llmz#build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["generate", "^build"]
+    },
     "@botpress/client#build": {
       "outputs": ["dist/**"],
       "dependsOn": ["generate", "^build"]
@@ -35,10 +43,6 @@
       "dependsOn": ["generate", "^build"]
     },
     "@botpress/zai#build": {
-      "outputs": ["dist/**"],
-      "dependsOn": ["generate", "^build"]
-    },
-    "llmz#build": {
       "outputs": ["dist/**"],
       "dependsOn": ["generate", "^build"]
     },
